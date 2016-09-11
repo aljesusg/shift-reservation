@@ -30,6 +30,14 @@ en:
       help:                  "help"
       about:                 "about"
       info:                  "information"
+      logout:                "logout"
+      profile:               "profile"
+      login:                 "login"
+    login:
+      username:              "Email"
+      password:              "Password"
+      join:                  "Log in"
+      description:           "Welcome to the Shift Reservation"
   admin:
     myconfig:
       global_lock_switch:

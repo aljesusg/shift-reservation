@@ -1,0 +1,30 @@
+%span#badge
+  %img{:src => image_path("logo.png")}
+
+.container
+  .row
+    .col-md-12
+      #brand
+        %img{:src => image_path("brand.svg"), :alt => "ManageIQ"}
+
+    .col-md-6.col-lg-5.login
+      .form-horizontal#login_div
+        %label.col-md-3.control-label= ('Username')
+        .col-md-9
+          = text_field :username,
+          :class => "form-control",
+          :placeholder => 'Username'
+
+      .form-group
+        %label.col-md-3.control-label= ('Password')
+        .col-md-9
+          = password_field :password, :autocomplete => "off",
+          :placeholder => ('Password'),
+          :class => "form-control"
+
+
+        %h1= (t 'layouts.login.description')
+
+        .form-group
+          .col-xs-4.col-md-3.submit
+            %input{:type => "Submit", :class => "btn btn-primary", :value => 'log in'}

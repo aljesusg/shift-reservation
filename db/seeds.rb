@@ -8,6 +8,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #
+# Admin user
+#
+FactoryGirl.create(:user, name: 'Administrator', email: 'admin@shift-reservation.com',
+ password: 'shiftadmin', password_confirmation: 'shiftadmin', admin: true)
+
+#
 # Shifts for Nuestra Senora del Rocio
 #
 r = FactoryGirl.create(:room, name: "Nuestra Señora del Rocío", capacity: 22)

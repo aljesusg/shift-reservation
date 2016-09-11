@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '6c3204fc602f4592feca10d5d1e73df1e972990293aa7fd8c8570dd4bb3e204f1d9ec2e5f49f8aba41f1932d791b0242c7a8a212cb6939fc46c25da3124d0784'
+  # config.secret_key = '1e13c83a18cf46cade4989cdf303e015497f4ed8d2caeb387f263d3c03f02ff4a9e13d41b734df683b49952db2d791c816f13255dd5e689dfaede3f91f430c82'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -89,6 +89,8 @@ Devise.setup do |config|
   # requests for sign in and sign up, you need to get a new CSRF token
   # from the server. You can disable this option at your own risk.
   # config.clean_up_csrf_token_on_authentication = true
+  # ==> Configuration for :token_authenticatable
+  # Defines name of the authentication token params key
 
   # When false, Devise will not attempt to reload routes on eager load.
   # This can reduce the time taken to boot the app but if your application
@@ -108,7 +110,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'df96ed6d222159972ca074b0236182085fa5fe1d0ce10490fe883b71c74f451b210687b10bda49ae8974d6a281960bb44f4620b6832df76dd824e94415eb5659'
+  # config.pepper = '969419b9b11a91099dd235cbfe0cb5b798a41bb9ad54b32f82eb6d11cf6de32e100224a6ea1841e17632bdb492921876ecfd8589add2201a4e16605f75e9032d'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false

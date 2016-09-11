@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-%html
-  %head
-    = render 'layouts/head'
-    = yield(:head_javascripts)
-  %body
-    / = render 'layouts/image'
+- if user_signed_in?
+  %html
+-else
+  %html.login-pf
+%head
+  = render 'layouts/head'
+  = yield(:head_javascripts)
+%body
+  / = render 'layouts/image'
+  - if user_signed_in?
     = render 'layouts/header'
-    .container-fluid
-      = render 'layouts/flash'
-      = yield
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  .container-fluid
+    = render 'layouts/flash'
+    = yield
+  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  - if user_signed_in?
     = render 'layouts/debug' if Rails.env.development?
-    = yield(:javascripts)
+  = yield(:javascripts)

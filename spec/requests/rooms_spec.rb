@@ -1,6 +1,10 @@
 require 'rails_helper'
+include Warden::Test::Helpers
+Warden.test_mode!
 
 RSpec.describe "Rooms", type: :request do
+  let(:user) { FactoryGirl.create(:user) }
+  before { login_as(user, scope: :user) }
   describe "GET /rooms" do
     let!(:room) { FactoryGirl.create(:room) }
     it "shows rooms index" do

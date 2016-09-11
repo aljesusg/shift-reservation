@@ -1,6 +1,10 @@
 require 'rails_helper'
+include Warden::Test::Helpers
+Warden.test_mode!
 
 RSpec.describe "Myconfigs", type: :request do
+  let(:user) { FactoryGirl.create(:user) }
+  before { login_as(user, scope: :user) }
   context "when no errors" do
     # Errors in the request would have to be at the database level and will raise an exeption
     it "changes lock to enabled" do

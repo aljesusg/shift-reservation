@@ -2,6 +2,10 @@
 require 'rails_helper'
 
 RSpec.describe InformationController, type: :controller do
+  before do
+    user = FactoryGirl.create(:user) # add here
+    sign_in(user) # change
+  end
   describe "GET #info" do
     it "returns http success" do
       get :info
