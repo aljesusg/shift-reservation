@@ -1,3 +1,24 @@
 %row
-  %p
-    = link_to (t "application.models.room.add_room").capitalize, new_admin_room_path, class: "btn btn-lg btn-primary"
+  .btn.btn-lg.btn-primary{"data-toggle" => "modal", "data-target" => "#myModal"}
+    = (t "application.models.room.add_room").capitalize
+  .modal.fade{"id" => "myModal"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"data-dismiss" => "modal", "aria-hidden" => "true"}
+            .pficon.pficon-close
+          %h4.modal-title
+            = (t "application.models.room.add_room").capitalize
+
+        .modal-body
+          = form_for [:admin, @room] do |f|
+            = render 'form_errors', object: @room
+            .form
+              = render 'room_form', f: f
+              .form-group
+                .col-sm-offset-2.col-sm-10.actions
+                  = f.submit t("application.models.room.add_room"), class: "btn btn-primary btn-lg"
+                  = link_to t("application.models.room.cancel_action"), admin_rooms_path, class: "btn btn-default btn-lg"
+        .modal-footer
+          = "Footer"
+
